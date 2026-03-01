@@ -1,7 +1,9 @@
 [project]
 name = "rssc"
 version = "0.1.0"
-description = "Add your description here"
+description = "Recommendation System for Selecting Conferences"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pypdf2==3.0.1",
+]
