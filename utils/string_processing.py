@@ -1,20 +1,12 @@
 from soupsieve.util import lower
+from re import findall
 
 
 def string_processing(raw: str) -> (list, str):
-    words = []
-    useful = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz'
-    cur = ''
-    for i, item in enumerate(raw):
-        if item == ' ':
-            for _ in cur:
-                if lower(_) in useful:
-                    words.append(cur)
-                    cur = ''
-                    break
-            else:
-                cur = ''
-            continue
-        cur = ''.join(cur + item)
+    """
+    :param raw: Raw string from parsed file
+    :return: Useful words for context in list and string formats
+    """
+    words = findall(r"[а-яёa-z]+", raw.lower())
 
     return words, ' '.join(words)
