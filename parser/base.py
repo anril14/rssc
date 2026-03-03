@@ -9,4 +9,3 @@ class BaseParser:
         Method for redefining in an inherited class
         """
         raise NotImplementedError
-

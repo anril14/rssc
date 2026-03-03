@@ -1,5 +1,9 @@
 from parser.base import BaseParser
 from parser.pdf import PdfParser
+from parser.docx import DocxParser
+from utils.string_processing import string_processing
+
+SAMPLE_PATH = 'files/Sample-PDF.pdf'
 
 
 def process_document(parser: BaseParser, source):
@@ -7,4 +11,6 @@ def process_document(parser: BaseParser, source):
 
 
 if __name__ == "__main__":
-    print(process_document(PdfParser(), source='files/Sample-PDF.pdf'))
+    print(string_processing(process_document(PdfParser(), source=SAMPLE_PATH)))
+
+# TODO Разделение слов в отдельный список + создание структуры(@dataclass) для хранения

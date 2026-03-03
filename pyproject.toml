@@ -5,5 +5,6 @@ description = "Recommendation System for Selecting Conferences"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "docx2python==3.6.2",
     "pypdf2==3.0.1",
 ]
